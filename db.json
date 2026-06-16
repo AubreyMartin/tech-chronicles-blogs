@@ -1,0 +1,25 @@
+{
+    "blogs": [
+      {
+        "id": 1,
+        "title": "Getting Started with React",
+        "author": "John",
+        "category": "React",
+        "content": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 2,
+        "title": "Introduction to Vite",
+        "author": "Sarah",
+        "category": "Vite",
+        "content": "Vite provides a faster development experience."
+      },
+      {
+        "id": 3,
+        "title": "Introduction to testing",
+        "author": "Raj",
+        "category": "Vite",
+        "content": "Testing is a process of checking if the code is working as expected."
+      }
+    ]
+  }
