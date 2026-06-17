@@ -1,17 +1,47 @@
-# React + Vite
+# Tech Chronicles Blog Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+A role-based blog management system built using React JS, JSON Server, and Bootstrap 5.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React JS
+- React Router DOM
+- JSON Server
+- Bootstrap 5
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+### General Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# tech-chronicles-blogs
+- [x] View All Blogs
+- [x] View Blog Details
+- [ ] Filter by Category
+- [ ] Filter by Author
+
+### User Module
+
+- [x] Home Page
+- [x] All Blogs
+- [x] Blog Details
+- [ ] Add Comment / Review
+
+### Author Module
+
+- [ ] Register & Login
+- [ ] Author Dashboard
+- [ ] CRUD Own Blogs
+- [ ] Read Comments
+
+### Admin Module
+
+- [ ] Login
+- [ ] Admin Dashboard
+- [ ] CRUD All Blogs
+- [ ] Manage Authors
+- [ ] Read Comments
+
+## Current Status
+
+🚧 In Development
