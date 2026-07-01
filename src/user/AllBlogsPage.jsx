@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { fetchBlogs } from "../api/blogs";
+
 function AllBlogsPage() {
   const [blogs, setBlogs] = useState([]);
   const [category, setCategory] = useState("");
   const [author, setAuthor] = useState("");
-
   const categories = [...new Set(blogs.map((blog) => blog.category))];
-
   const authors = [...new Set(blogs.map((blog) => blog.author))];
-
   const filteredBlogs = blogs.filter((blog) => {
     const categoryMatch = category === "" || blog.category === category;
 
@@ -19,9 +17,7 @@ function AllBlogsPage() {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:3000/blogs").then((response) => {
-      setBlogs(response.data);
-    });
+    fetchBlogs().then(setBlogs);
   }, []);
 
   return (

@@ -1,74 +1,107 @@
 {
   "blogs": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Getting Started with React",
       "author": "John",
       "category": "React",
       "content": "React is a JavaScript library for building modern user interfaces using reusable components."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Understanding React Hooks",
       "author": "John",
       "category": "React",
       "content": "Hooks allow functional components to manage state and side effects without using classes."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Introduction to Vite",
       "author": "Sarah",
       "category": "Vite",
       "content": "Vite is a fast build tool and development server that improves frontend developer experience."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Deploying React Apps with Vercel",
       "author": "Sarah",
       "category": "Deployment",
       "content": "Vercel provides an easy way to deploy React and Vite applications with automatic builds."
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "JavaScript ES6 Features",
       "author": "Michael",
       "category": "JavaScript",
       "content": "ES6 introduced arrow functions, destructuring, template literals, modules, and many other features."
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Async JavaScript Explained",
       "author": "Michael",
       "category": "JavaScript",
       "content": "Promises and async-await make asynchronous code easier to read and maintain."
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "CSS Grid Layout Guide",
       "author": "Emma",
       "category": "CSS",
       "content": "CSS Grid provides a two-dimensional layout system for building responsive web interfaces."
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Flexbox in Practice",
       "author": "Emma",
       "category": "CSS",
       "content": "Flexbox is ideal for one-dimensional layouts and aligning elements efficiently."
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Building REST APIs",
       "author": "David",
       "category": "Backend",
       "content": "REST APIs expose resources through HTTP methods such as GET, POST, PUT, and DELETE."
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Node.js Fundamentals",
       "author": "David",
       "category": "Backend",
       "content": "Node.js allows JavaScript to run on the server using Google's V8 engine."
     }
-  ]
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "blogId": 1,
+      "name": "Aubrey",
+      "comment": "Great React article!"
+    },
+    {
+      "id": "2",
+      "blogId": 1,
+      "name": "John",
+      "comment": "This helped me understand hooks."
+    },
+    {
+      "id": "3",
+      "blogId": 2,
+      "name": "Sarah",
+      "comment": "Nice explanation of Vite."
+    },
+    {
+      "blogId": 1,
+      "name": "Aubrey",
+      "comment": "This article helped me a lot!",
+      "id": "-ubFaL2idMU"
+    },
+    {
+      "blogId": 1,
+      "name": "Sarah",
+      "comment": " Nice explanation!",
+      "id": "W_j-TvVmu6w"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
