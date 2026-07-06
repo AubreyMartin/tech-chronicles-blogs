@@ -69,6 +69,20 @@
       "author": "David",
       "category": "Backend",
       "content": "Node.js allows JavaScript to run on the server using Google's V8 engine."
+    },
+    {
+      "id": "r2aFlPEWP7c",
+      "title": "Learning React Router",
+      "author": "Aubrey",
+      "category": "Learning React Router",
+      "content": "React Router helps build single-page applications with multiple pages....."
+    },
+    {
+      "id": "d1XN-rfyZDY",
+      "title": "Test 2",
+      "author": "Aubrey",
+      "category": "React",
+      "content": "qwewfahsldikjf.jew"
     }
   ],
   "comments": [
@@ -101,6 +115,26 @@
       "name": "Sarah",
       "comment": " Nice explanation!",
       "id": "W_j-TvVmu6w"
+    },
+    {
+      "blogId": 1,
+      "name": "aa",
+      "comment": "kjfe\n",
+      "id": "6glXIbJWKaU"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Aubrey ",
+      "email": "aubreymartin9000@gmail.com",
+      "password": "1q11q1q11",
+      "id": "RMQzRDXg3x0"
+    },
+    {
+      "name": "John",
+      "email": "john@gmail.com",
+      "password": "123",
+      "id": "vCd1vB11kEE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
