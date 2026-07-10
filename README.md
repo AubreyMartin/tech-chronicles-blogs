@@ -36,11 +36,11 @@ A role-based blog management system built using React JS, JSON Server, and Boots
 
 ### Admin Module
 
-- [ ] Login
-- [ ] Admin Dashboard
-- [ ] CRUD All Blogs
-- [ ] Manage Authors
-- [ ] Read Comments
+- [x] Login
+- [x] Admin Dashboard
+- [x] CRUD All Blogs
+- [x] Manage Authors
+- [x] Read Comments
 
 ## Current Status
 
