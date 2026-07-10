@@ -17,22 +17,22 @@ A role-based blog management system built using React JS, JSON Server, and Boots
 
 - [x] View All Blogs
 - [x] View Blog Details
-- [ ] Filter by Category
-- [ ] Filter by Author
+- [x] Filter by Category
+- [x] Filter by Author
 
 ### User Module
 
 - [x] Home Page
 - [x] All Blogs
 - [x] Blog Details
-- [ ] Add Comment / Review
+- [x] Add Comment / Review
 
 ### Author Module
 
-- [ ] Register & Login
-- [ ] Author Dashboard
-- [ ] CRUD Own Blogs
-- [ ] Read Comments
+- [x] Register & Login
+- [x] Author Dashboard
+- [x] CRUD Own Blogs
+- [x] Read Comments
 
 ### Admin Module
 
