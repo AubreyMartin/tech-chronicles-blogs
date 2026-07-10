@@ -8,6 +8,10 @@ import Dashboard from "./author/Dashboard";
 import CreateBlog from "./author/CreateBlog";
 import EditBlog from "./author/EditBlog";
 import MyBlogs from "./author/MyBlogs";
+import AdminLogin from "./admin/Login";
+import AdminDashboard from "./admin/Dashboard";
+import ManageBlogs from "./admin/ManageBlogs";
+import ManageAuthors from "./admin/ManageAuthors";
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +25,10 @@ function App() {
         <Route path="/author/create" element={<CreateBlog />} />
         <Route path="/author/edit/:id" element={<EditBlog />} />
         <Route path="/author/my-blogs" element={<MyBlogs />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/blogs" element={<ManageBlogs />} />
+        <Route path="/admin/authors" element={<ManageAuthors />} />
       </Routes>
     </BrowserRouter>
   );

@@ -48,10 +48,10 @@ function MyBlogs() {
             <li key={blog.id}>
               <h3>{blog.title}</h3>
               <p>Category: {blog.category}</p>
-              <button onClick={() => handleDelete(blog.id)}>Delete</button>
               <Link to={`/author/edit/${blog.id}`}>
                 <button>Edit</button>
               </Link>
+              <button onClick={() => handleDelete(blog.id)}>Delete</button>
             </li>
           ))}
         </ul>
