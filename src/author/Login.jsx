@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { fetchAuthors } from "../api/authors";
 
 function Login() {
   const navigate = useNavigate();
@@ -11,9 +11,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.get("http://localhost:3000/authors");
-
-      const authors = response.data;
+      const authors = await fetchAuthors();
 
       const author = authors.find(
         (author) => author.email === email && author.password === password,

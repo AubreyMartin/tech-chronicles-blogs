@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_BASE = import.meta.env.VITE_API_URL;
+import { apiClient, hasRemoteApi } from "./client";
 
 async function getStaticBlogs() {
   const response = await axios.get("/db.json");
@@ -8,8 +7,8 @@ async function getStaticBlogs() {
 }
 
 export async function fetchBlogs() {
-  if (API_BASE) {
-    const response = await axios.get(`${API_BASE}/blogs`);
+  if (hasRemoteApi()) {
+    const response = await apiClient.get("/blogs");
     return response.data;
   }
 
@@ -17,11 +16,30 @@ export async function fetchBlogs() {
 }
 
 export async function fetchBlog(id) {
-  if (API_BASE) {
-    const response = await axios.get(`${API_BASE}/blogs/${id}`);
+  if (hasRemoteApi()) {
+    const response = await apiClient.get(`/blogs/${id}`);
     return response.data;
   }
 
   const blogs = await getStaticBlogs();
   return blogs.find((blog) => String(blog.id) === String(id)) ?? null;
+}
+
+export async function fetchBlogsByAuthor(authorName) {
+  const response = await apiClient.get(`/blogs?author=${authorName}`);
+  return response.data;
+}
+
+export async function createBlog(blog) {
+  const response = await apiClient.post("/blogs", blog);
+  return response.data;
+}
+
+export async function updateBlog(id, blog) {
+  const response = await apiClient.put(`/blogs/${id}`, blog);
+  return response.data;
+}
+
+export async function deleteBlog(id) {
+  await apiClient.delete(`/blogs/${id}`);
 }

@@ -1,7 +1,7 @@
 import HomePage from "./user/HomePage";
 import AllBlogsPage from "./user/AllBlogsPage";
 import BlogDetail from "./user/BlogDetail";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Register from "./author/Register";
 import Login from "./author/Login";
 import Dashboard from "./author/Dashboard";
@@ -16,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/homepage" replace />} />
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/all-blogs" element={<AllBlogsPage />} />
         <Route path="/blog/:id" element={<BlogDetail />} />

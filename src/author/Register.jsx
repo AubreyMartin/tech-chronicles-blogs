@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import { createAuthor } from "../api/authors";
 
 function Register() {
   const [name, setName] = useState("");
@@ -16,7 +16,7 @@ function Register() {
     };
 
     try {
-      await axios.post("http://localhost:3000/authors", newAuthor);
+      await createAuthor(newAuthor);
 
       alert("Author registered successfully!");
 

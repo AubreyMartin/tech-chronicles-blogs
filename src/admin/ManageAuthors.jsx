@@ -1,23 +1,19 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchAuthors, deleteAuthor } from "../api/authors";
 
 function ManageAuthors() {
   const [authors, setAuthors] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/authors")
-      .then((response) => {
-        setAuthors(response.data);
-      })
+    fetchAuthors()
+      .then(setAuthors)
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`http://localhost:3000/authors/${id}`)
+    deleteAuthor(id)
       .then(() => {
         setAuthors(authors.filter((author) => author.id !== id));
       })

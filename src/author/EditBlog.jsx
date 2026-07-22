@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { fetchBlog, updateBlog } from "../api/blogs";
 
 function EditBlog() {
   const { id } = useParams();
@@ -12,11 +12,8 @@ function EditBlog() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/blogs/${id}`)
-      .then((response) => {
-        const blog = response.data;
-
+    fetchBlog(id)
+      .then((blog) => {
         setTitle(blog.title);
         setAuthor(blog.author);
         setCategory(blog.category);
@@ -39,7 +36,7 @@ function EditBlog() {
     };
 
     try {
-      await axios.put(`http://localhost:3000/blogs/${id}`, updatedBlog);
+      await updateBlog(id, updatedBlog);
 
       alert("Blog updated successfully!");
 

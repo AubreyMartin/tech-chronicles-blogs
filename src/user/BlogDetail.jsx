@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { fetchBlog } from "../api/blogs";
+import { fetchComments, createComment } from "../api/comments";
 
 function BlogDetail() {
   const { id } = useParams();
@@ -16,7 +16,6 @@ function BlogDetail() {
   useEffect(() => {
     setLoading(true);
 
-    // Fetch blog details
     fetchBlog(id)
       .then((data) => {
         setBlog(data);
@@ -25,12 +24,8 @@ function BlogDetail() {
         setLoading(false);
       });
 
-    // Fetch comments for this blog
-    axios
-      .get(`http://localhost:3000/comments?blogId=${id}`)
-      .then((response) => {
-        setComments(response.data);
-      })
+    fetchComments(id)
+      .then(setComments)
       .catch((error) => {
         console.error(error);
       });
@@ -39,17 +34,13 @@ function BlogDetail() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:3000/comments", {
-        blogId: Number(id),
-        name,
-        comment,
-      })
-      .then((response) => {
-        // Add the new comment to the list immediately
-        setComments([...comments, response.data]);
-
-        // Clear the form
+    createComment({
+      blogId: Number(id),
+      name,
+      comment,
+    })
+      .then((newComment) => {
+        setComments([...comments, newComment]);
         setName("");
         setComment("");
       })

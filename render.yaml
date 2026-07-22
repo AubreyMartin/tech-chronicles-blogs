@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: tech-chronicles-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npx json-server --watch public/db.json --host 0.0.0.0 --port $PORT
+    healthCheckPath: /blogs

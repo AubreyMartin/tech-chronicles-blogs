@@ -1,34 +1,28 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import { fetchBlogs, deleteBlog } from "../api/blogs";
+import { fetchAllComments } from "../api/comments";
 
 function ManageBlogs() {
   const [blogs, setBlogs] = useState([]);
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/blogs")
-      .then((response) => {
-        setBlogs(response.data);
-      })
+    fetchBlogs()
+      .then(setBlogs)
       .catch((error) => {
         console.error(error);
       });
 
-    axios
-      .get("http://localhost:3000/comments")
-      .then((response) => {
-        setComments(response.data);
-      })
+    fetchAllComments()
+      .then(setComments)
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`http://localhost:3000/blogs/${id}`)
+    deleteBlog(id)
       .then(() => {
         setBlogs(blogs.filter((blog) => blog.id !== id));
       })

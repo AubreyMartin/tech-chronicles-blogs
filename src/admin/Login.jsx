@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { fetchAdmins } from "../api/admins";
 
 function Login() {
   const navigate = useNavigate();
@@ -12,9 +12,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.get("http://localhost:3000/admins");
-
-      const admins = response.data;
+      const admins = await fetchAdmins();
 
       const admin = admins.find(
         (admin) => admin.email === email && admin.password === password,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import { fetchBlogsByAuthor, deleteBlog } from "../api/blogs";
 
 function MyBlogs() {
   const [blogs, setBlogs] = useState([]);
@@ -9,26 +9,19 @@ function MyBlogs() {
 
   const authorName = loggedInAuthor?.name;
 
-  console.log("Logged In Author:", loggedInAuthor);
-  console.log("Author Name:", authorName);
-
   useEffect(() => {
     if (!authorName) return;
 
-    axios
-      .get(`http://localhost:3000/blogs?author=${authorName}`)
-      .then((response) => {
-        setBlogs(response.data);
-      })
+    fetchBlogsByAuthor(authorName)
+      .then(setBlogs)
       .catch((error) => {
         console.error(error);
       });
   }, [authorName]);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`http://localhost:3000/blogs/${id}`)
-      .then((response) => {
+    deleteBlog(id)
+      .then(() => {
         setBlogs(blogs.filter((blog) => blog.id !== id));
       })
       .catch((error) => {

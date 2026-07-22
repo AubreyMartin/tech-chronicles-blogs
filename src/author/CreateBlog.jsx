@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import { createBlog } from "../api/blogs";
 
 function CreateBlog() {
   const [title, setTitle] = useState("");
@@ -18,7 +18,7 @@ function CreateBlog() {
     };
 
     try {
-      await axios.post("http://localhost:3000/blogs", newBlog);
+      await createBlog(newBlog);
 
       alert("Blog created successfully!");
 
